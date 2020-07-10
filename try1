@@ -1,0 +1,46 @@
+import random
+numConversions = {
+    "0": "rock",
+    "1": "paper",
+    "2": "scissors"}
+restart = "Would you like to play again?"
+win_1 = "Paper covers rock."
+win_2 = "Rock crushes scissors."
+win_3 = "Scissors cut paper."
+
+while True:
+    player_choice = input("Pick 0 for rock, 1 for paper, or 2 for scissors, or q to quit: ")
+    computer_choice = random.choice(list(numConversions.keys()))
+    if player_choice == computer_choice:
+        print("It's a draw.  Choose again.")
+        continue
+    if player_choice == "0" and computer_choice == "1":
+        print(win_1 + " You lose!")
+        print(restart)
+        continue
+    if player_choice == "0" and computer_choice == "2":
+        print(win_2 + " You win!")
+        print(restart)
+        continue
+    if player_choice == "1" and computer_choice == "0":
+        print(win_1 + " You win!")
+        print(restart)
+        continue
+    if player_choice == "1" and computer_choice == "2":
+        print(win_3 + " You lose!")
+        print(restart)
+        continue
+    if player_choice == "2" and computer_choice == "0":
+        print(win_2 + " You lose!")
+        print(restart)
+        continue
+    if player_choice == "2" and computer_choice == "1":
+        print(win_3 + " You win!")
+        print(restart)
+        continue
+    if player_choice == "q":
+        print("Thanks for stopping by.")
+        break
+    else:
+        print("Invalid entry.  Try again.")
+        continue
